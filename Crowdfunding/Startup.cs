@@ -41,6 +41,12 @@ namespace Crowdfunding
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                AppDBContent Content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
+                DBObjects.Initial(Content);
+            }
         }
     }
 }
