@@ -1,0 +1,11 @@
+﻿<h1>All projects:</h1>
+<h3>@Model.CurrentCategory</h3>
+@{
+    foreach (var proj in Model.AllProjects)
+    {
+        <div>
+            <h2>Name: @proj.Name</h2>
+            <p>Desc: @proj.ShortDescription</p>
+        </div>
+    }
+}

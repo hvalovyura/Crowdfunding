@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Crowdfunding.Data.Interfaces
 {
-    interface IAllProjects
+    public interface IAllProjects
     {
         IEnumerable<Project> Projects { get; }
 
