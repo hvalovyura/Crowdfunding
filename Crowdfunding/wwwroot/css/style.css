@@ -1,0 +1,7 @@
+﻿body {
+    background: #fcfcfc
+}
+
+nav.navbar .dropdown:hover > .dropdown-menu {
+    display: block;
+}
