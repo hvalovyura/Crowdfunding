@@ -119,7 +119,6 @@ C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\bin\Debug\netcorea
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\staticwebassets\Crowdfunding.StaticWebAssets.Manifest.cache
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\staticwebassets\Crowdfunding.StaticWebAssets.xml
-C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Crowdfunding.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Crowdfunding.RazorAssemblyInfo.cache
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Crowdfunding.RazorAssemblyInfo.cs
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Crowdfunding.AssemblyInfoInputs.cache
@@ -138,3 +137,4 @@ C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcorea
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Crowdfunding.MvcApplicationPartsAssemblyInfo.cache
