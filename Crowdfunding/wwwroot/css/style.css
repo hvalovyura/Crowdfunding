@@ -3,5 +3,18 @@
 }
 
 nav.navbar .dropdown:hover > .dropdown-menu {
+    width: 300px;
     display: block;
+    text-align: left;
+    left: 150px;
+    top: auto;
+    position: fixed;
+}
+
+li.dropdown.show > .dropdown-menu {
+    width: 300px;
+    text-align: left;
+    left: 150px;
+    top: auto;
+    position: fixed;
 }
