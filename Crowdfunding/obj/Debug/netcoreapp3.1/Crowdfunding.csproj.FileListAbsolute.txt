@@ -138,3 +138,4 @@ C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcorea
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Crowdfunding.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\2die4\Desktop\Crowdfunding\Crowdfunding\Crowdfunding\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs

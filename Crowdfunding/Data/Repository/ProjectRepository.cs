@@ -16,7 +16,7 @@ namespace Crowdfunding.Data.Repository
             this.AppDBContent = AppDBContent;
         }
         public IEnumerable<Project> Projects => AppDBContent.Project.Include(c => c.Category);
-        public IEnumerable<Project> GetFavCars => AppDBContent.Project.Where(pi => pi.IsFavourite).Include(c => c.Category);
+        public IEnumerable<Project> GetFavProjects => AppDBContent.Project.Where(pi => pi.IsFavourite).Include(c => c.Category);
 
         public Project GetObjectProject(int ProjectID) => AppDBContent.Project.FirstOrDefault(p => p.Id == ProjectID);
     }

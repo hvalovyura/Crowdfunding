@@ -10,7 +10,7 @@ namespace Crowdfunding.Data.Interfaces
     {
         IEnumerable<Project> Projects { get; }
 
-        IEnumerable<Project> GetFavCars { get; }
+        IEnumerable<Project> GetFavProjects { get; }
 
         Project GetObjectProject(int ProjectID);
     }
