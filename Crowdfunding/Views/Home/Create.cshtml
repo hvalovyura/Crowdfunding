@@ -1,5 +1,10 @@
 ﻿@model Crowdfunding.Data.Models.Project
 
+<head>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
 <h2>Create new project</h2>
 
 @using (Html.BeginForm())
@@ -8,26 +13,21 @@
     <br />
     @Html.EditorFor(model => model.Name)
     <br />
+    @Html.LabelFor(model => model.CategoryId, "CategoryID(1 - music, 2 - videogames)")
+    <br />
+    @Html.EditorFor(model => model.CategoryId)
     <br />
     @Html.LabelFor(model => model.ShortDescription, "ShortDescription")
     <br />
     @Html.EditorFor(model => model.ShortDescription)
     <br />
-    <br />
     @Html.LabelFor(model => model.LongDescription, "LongDescription")
     <br />
     @Html.EditorFor(model => model.LongDescription)
     <br />
-    <br />
     @Html.LabelFor(model => model.Img, "Img")
     <br />
     @Html.EditorFor(model => model.Img)
-    <br />
-    <br />
-    @Html.LabelFor(model => model.CategoryId, "CategoryID(1 - music, 2 - videogames)")
-    <br />
-    @Html.EditorFor(model => model.CategoryId)
-    <br />
     <br />
     <input type="submit" value="Create" />
 }
