@@ -23,11 +23,9 @@
     @Html.LabelFor(model => model.LongDescription, "LongDescription")
     <br />
     @Html.EditorFor(model => model.LongDescription)
-    <br />
-    @Html.LabelFor(model => model.Img, "Img")
-    <br />
-    @Html.EditorFor(model => model.Img)
-    <br />
+    <div class="editor-field invisible">
+        @Html.EditorFor(model => model.Img)
+    </div>
     <div id="drop-area">
         <div class="my-form">
             <p>Chose your image or drag it into this area</p>
@@ -36,17 +34,9 @@
         </div>
         <div id="gallery"></div>
     </div>
+    <br />
     <input type="submit" value="Create" />
 }
-
-@*<div id="drop-area">
-        <form class="my-form">
-            <p>Chose your image or drag it into this area</p>
-            <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-            <label class="button" for="fileElem">Chose</label>
-        </form>
-        <div id="gallery"></div>
-    </div>*@
 
 <style>
     #drop-area {
@@ -54,7 +44,7 @@
         border-radius: 20px;
         width: 480px;
         font-family: sans-serif;
-        margin: 100px auto;
+        /*margin: 100px auto;*/
         padding: 20px;
     }
 
@@ -100,36 +90,43 @@
 </style>
 
 
-
-
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
     let dropArea = document.getElementById('drop-area')
-        ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-            dropArea.addEventListener(eventName, preventDefaults, false)
-        })
+
+    ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, preventDefaults, false)
+    })
+
     function preventDefaults(e) {
         e.preventDefault()
         e.stopPropagation()
     }
+
     ;['dragenter', 'dragover'].forEach(eventName => {
         dropArea.addEventListener(eventName, highlight, false)
     })
-        ;['dragleave', 'drop'].forEach(eventName => {
-            dropArea.addEventListener(eventName, unhighlight, false)
-        })
+
+    ;['dragleave', 'drop'].forEach(eventName => {
+        dropArea.addEventListener(eventName, unhighlight, false)
+    })
+
     function highlight(e) {
         dropArea.classList.add('highlight')
     }
+
     function unhighlight(e) {
         dropArea.classList.remove('highlight')
     }
+
     dropArea.addEventListener('drop', handleDrop, false)
+
     function handleDrop(e) {
         let dt = e.dataTransfer
         let files = dt.files
         handleFiles(files)
     }
+
     function handleFiles(files) {
         files = [...files]
         files.forEach(uploadFile)
@@ -139,7 +136,7 @@
     function uploadFile(file) {
         var url = 'https://api.cloudinary.com/v1_1/hvalovyura/upload'
         var preset = 'rqicmjup'
-        var formData = new FormData();
+        var formData = new FormData()
         formData.append('file', file);
         formData.append('upload_preset', preset);
 
@@ -169,5 +166,4 @@
             document.getElementById('gallery').appendChild(img)
         }
     }
-
 </script>
