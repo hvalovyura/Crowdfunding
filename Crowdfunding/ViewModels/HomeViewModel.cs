@@ -9,7 +9,5 @@ namespace Crowdfunding.ViewModels
     public class HomeViewModel
     {
         public IEnumerable<Project> FavProjects { get; set; }
-
-        //public IEnumerable<Category> AllCategories { get; set; }
     }
 }

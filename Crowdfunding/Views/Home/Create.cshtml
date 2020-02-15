@@ -3,18 +3,28 @@
 <head>
     <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="~/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="~/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
+
 <h2>Create new project</h2>
 
 @using (Html.BeginForm())
 {
+    <div class="editor-field invisible">
+        @Html.EditorFor(model => model.CategoryId)
+    </div>
     @Html.LabelFor(model => model.Name, "Name")
     <br />
     @Html.EditorFor(model => model.Name)
     <br />
-    @Html.LabelFor(model => model.CategoryId, "CategoryID(1 - music, 2 - videogames)")
+    @Html.LabelFor(model => model.CategoryId, "Category")
     <br />
-    @Html.EditorFor(model => model.CategoryId)
+    <select id="categories" name="categories" onchange="selectCategory()">
+        <option value="">Select Category</option>
+        <option>Music</option>
+        <option>VideoGames</option>
+    </select>
     <br />
     @Html.LabelFor(model => model.ShortDescription, "ShortDescription")
     <br />
@@ -37,6 +47,8 @@
     <br />
     <input type="submit" value="Create" />
 }
+<script src="~/js/jquery-3.3.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
 
 <style>
     #drop-area {
@@ -88,7 +100,7 @@
     }
 </style>
 
-
+<script src="~/js/bootstrap.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript">
     let dropArea = document.getElementById('drop-area')
@@ -163,6 +175,17 @@
             let img = document.createElement('img')
             img.src = reader.result
             document.getElementById('gallery').appendChild(img)
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function selectCategory() {
+        if (document.getElementById('categories').value == "Music") {
+            document.getElementById('@Html.IdFor(model => model.CategoryId)').value = 1;
+        }
+        else if (document.getElementById('categories').value == "VideoGames") {
+            document.getElementById('@Html.IdFor(model => model.CategoryId)').value = 2;
         }
     }
 </script>
