@@ -40,7 +40,12 @@ namespace Crowdfunding
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{Id?}");
+                routes.MapRoute(name: "categoryFilter", template: "Projects/{action}/{Category?}", defaults: new { Controller = "Projects", action = "List" });
+            });
 
             using (var scope = app.ApplicationServices.CreateScope())
             {

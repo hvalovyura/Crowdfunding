@@ -19,12 +19,11 @@ li.dropdown.show > .dropdown-menu {
     position: fixed;
 }
 
-#drop-area {
+/*#drop-area {
     border: 2px dashed #ccc;
     border-radius: 20px;
     width: 480px;
     font-family: sans-serif;
-    margin: 100px auto;
     padding: 20px;
 }
 
@@ -66,4 +65,4 @@ p {
 
 #fileElem {
     display: none;
-}
+}*/
