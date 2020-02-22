@@ -52,9 +52,22 @@ namespace Crowdfunding.Controllers
             };               
 
             ViewBag.Title = "Projects list";
-            //ProjectsListViewModel obj = new ProjectsListViewModel();
-            //obj.AllProjects = _allProjects.Projects;
-            //obj.CurrentCategory = "Projects";
+            return View(ProjectObj);
+        }
+
+        public ViewResult ThisProject(string projectName)
+        {
+            IEnumerable<Project> projects = null;
+            projects = _allProjects.Projects.Where(i => i.Name.Equals(projectName));
+            string _category = "";
+            //return View(project);
+            var ProjectObj = new ProjectsListViewModel
+            {
+                AllProjects = projects,
+                CurrentCategory = _category
+            };
+
+            ViewBag.Title = "Projects list";
             return View(ProjectObj);
         }
     }
