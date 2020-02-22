@@ -8,10 +8,10 @@ namespace Crowdfunding.Data.Models
 {
     public class LoginModel
     {
-        [Required(ErrorMessage = "Не указан Email")]
+        [Required(ErrorMessage = "Please, enter Email")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Не указан пароль")]
+        [Required(ErrorMessage = "Please, enter password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }

@@ -55,11 +55,10 @@ namespace Crowdfunding.Controllers
                 User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
                 if (user == null)
                 {
-                    // добавляем пользователя в бд
                     db.Users.Add(new User { Email = model.Email, Password = model.Password });
                     await db.SaveChangesAsync();
 
-                    await Authenticate(model.Email); // аутентификация
+                    await Authenticate(model.Email);
 
                     return RedirectToAction("Index", "Home");
                 }
