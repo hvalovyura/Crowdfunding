@@ -14,6 +14,7 @@ namespace Crowdfunding.Data
 
         }
 
+        public DbSet<User> Users { get; set; }
         public DbSet<Project> Project { get; set; }
         public DbSet<Category> Category { get; set; }
     }

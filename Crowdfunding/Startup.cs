@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Crowdfunding.Data;
 using Crowdfunding.Data.Interfaces;
 using Crowdfunding.Data.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,6 +33,12 @@ namespace Crowdfunding
             services.AddTransient<IAllProjects, ProjectRepository>();
             services.AddTransient<IProjectsCategory, CategoryRepository>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +47,8 @@ namespace Crowdfunding
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseAuthentication();    // аутентификация
+            app.UseAuthorization();     // авторизация
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {
