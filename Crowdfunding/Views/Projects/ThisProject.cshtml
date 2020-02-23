@@ -1,5 +1,4 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<h1>All projects:</h1>
 <form class="row mt-5 mb-2">
     @{
         foreach (var proj in Model.AllProjects)
@@ -7,7 +6,7 @@
             <div class="col-lg-4">
                 <img src="@proj.Img" height="200" alt="@proj.Name" />
                 <h2>@proj.Name</h2>
-                <p>Desc: @proj.ShortDescription</p>
+                <p>Desc: @proj.LongDescription</p>
             </div>
         }
     }

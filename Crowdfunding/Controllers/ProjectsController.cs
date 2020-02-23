@@ -60,13 +60,11 @@ namespace Crowdfunding.Controllers
             IEnumerable<Project> projects = null;
             projects = _allProjects.Projects.Where(i => i.Name.Equals(projectName));
             string _category = "";
-            //return View(project);
             var ProjectObj = new ProjectsListViewModel
             {
                 AllProjects = projects,
                 CurrentCategory = _category
             };
-
             ViewBag.Title = "Projects list";
             return View(ProjectObj);
         }
