@@ -38,7 +38,7 @@ namespace Crowdfunding
                 {
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
                 });
-            services.AddControllersWithViews();
+            services.AddControllersWithViews();            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,15 +47,14 @@ namespace Crowdfunding
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseAuthentication();    // аутентификация
-            app.UseAuthorization();     // авторизация
-            //app.UseMvcWithDefaultRoute();
+            app.UseAuthentication();    
+            app.UseAuthorization();   
             app.UseMvc(routes =>
             {
                 routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{Id?}");
                 routes.MapRoute(name: "categoryFilter", template: "Projects/{action}/{Category?}", defaults: new { Controller = "Projects", action = "List" });
             });
-
+            
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDBContent Content = scope.ServiceProvider.GetRequiredService<AppDBContent>();
